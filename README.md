@@ -243,6 +243,20 @@ If we are not pushing the gem to the gem-repo we can leverage the gem in app by 
 gem 'cittalab_rights_gem', git:'https://github.com/citta-lab/cittalab_rights_gem'
 ```
 
+#### Local Gem
+If we are in a scenario to work off of local gem in the app and is added in the gemspec then we need to do below two steps.
+
+1. update gemspec
+```ruby
+spec.add_dependency 'example-gem'
+```
+
+2. update gemfile
+```ruby
+gem 'example-gem', :path => '../example-gem'
+```
+if we don't need to add in gemspec then we can just get away with step 2. Refer this post from [stackoverflow](https://stackoverflow.com/questions/13678957/how-to-add-dependency-of-a-local-gem-to-a-rails-plugin-engine-in-gemspec-file).
+
 
 
 ### Building Blocks
